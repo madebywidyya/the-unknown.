@@ -1,0 +1,152 @@
+[
+  {
+    "id": "ev-001",
+    "name": "Brass Clock Face",
+    "caseId": "001",
+    "type": "object",
+    "description": "Close-up photograph of the stopped clock. Hands locked at 11:47. Faint scratch on the glass forming the digits 4 and 7.",
+    "analysis": "The scratch is deliberate and was made from the outside. The mechanism shows no signs of recent movement.",
+    "image": "assets/images/evidence-clock.jpg",
+    "xp": 10
+  },
+  {
+    "id": "ev-002",
+    "name": "Witness Statement A",
+    "caseId": "001",
+    "type": "document",
+    "description": "Signed statement claiming a chime was heard at the exact moment the clock stopped.",
+    "analysis": "The Chronology Wing has no functioning chime mechanism. The claim is physically inconsistent with the location.",
+    "image": null,
+    "xp": 10
+  },
+  {
+    "id": "ev-003",
+    "name": "Maintenance Log Fragment",
+    "caseId": "001",
+    "type": "document",
+    "description": "Torn page from the 1987 service record. Mentions 'silent mode engaged permanently'.",
+    "analysis": "Confirms the clock was intentionally silenced. Supports the theory of a modified alarm rather than a broken device.",
+    "image": null,
+    "xp": 10
+  },
+  {
+    "id": "ev-004",
+    "name": "Letter #1 — Future Date",
+    "caseId": "002",
+    "type": "document",
+    "description": "Cream paper letter dated three years ahead. Underlined word: OBSERVE.",
+    "analysis": "Paper stock matches 1962 discontinued archive stationery. Handwriting consistent across series.",
+    "image": null,
+    "xp": 10
+  },
+  {
+    "id": "ev-005",
+    "name": "Letter #2 — Pattern Seed",
+    "caseId": "002",
+    "type": "document",
+    "description": "Second letter in the series. Underlined sequence continues the message.",
+    "analysis": "When combined with Letter #1 the underlined words begin to form a readable phrase.",
+    "image": null,
+    "xp": 10
+  },
+  {
+    "id": "ev-006",
+    "name": "Cipher Card",
+    "caseId": "002",
+    "type": "object",
+    "description": "Faded card with a simple letter substitution grid found behind a shelf.",
+    "analysis": "Key for decoding the underlined sequence into coordinates and a date.",
+    "image": null,
+    "xp": 15
+  },
+  {
+    "id": "ev-007",
+    "name": "Visitor Book Anomaly",
+    "caseId": "002",
+    "type": "document",
+    "description": "Unlogged entry matching the decoded date from the letters.",
+    "analysis": "Confirms the letters point to a real, unrecorded visit.",
+    "image": null,
+    "xp": 10
+  },
+  {
+    "id": "ev-008",
+    "name": "Official Group Photograph",
+    "caseId": "003",
+    "type": "image",
+    "description": "Public display photograph showing seven committee members.",
+    "analysis": "The seventh figure appears slightly softer in focus than the others — possible composite.",
+    "image": "assets/images/evidence-photo.jpg",
+    "xp": 10
+  },
+  {
+    "id": "ev-009",
+    "name": "Original Glass Negative",
+    "caseId": "003",
+    "type": "image",
+    "description": "Cold-vault negative showing only six figures. Empty space where the seventh should stand.",
+    "analysis": "No emulsion damage. The absence is original to the exposure.",
+    "image": null,
+    "xp": 15
+  },
+  {
+    "id": "ev-010",
+    "name": "Meeting Minutes 1974",
+    "caseId": "003",
+    "type": "document",
+    "description": "Typed minutes listing six attendees. Margin note references missing memo 74-11-B.",
+    "analysis": "Direct contradiction with the public plaque and photograph.",
+    "image": null,
+    "xp": 10
+  },
+  {
+    "id": "ev-011",
+    "name": "Reel-to-Reel Tape",
+    "caseId": "004",
+    "type": "object",
+    "description": "Metal canister labeled 'Test Tone — Do Not Play'. Contains patterned static.",
+    "analysis": "Static bursts form a consistent short-long pattern suitable for encoding.",
+    "image": null,
+    "xp": 15
+  },
+  {
+    "id": "ev-012",
+    "name": "Observatory Log Excerpt",
+    "caseId": "004",
+    "type": "document",
+    "description": "Handwritten note confirming the pattern was intentional.",
+    "analysis": "Links the tape to deliberate logging of anomalous signals.",
+    "image": null,
+    "xp": 10
+  },
+  {
+    "id": "ev-013",
+    "name": "Catalogue Gap Note",
+    "caseId": "005",
+    "type": "document",
+    "description": "1991 audit remark dismissing the missing entry as clerical error.",
+    "analysis": "The dismissal itself is suspicious given the physical existence of the sealed box.",
+    "image": null,
+    "xp": 10
+  },
+  {
+    "id": "ev-014",
+    "name": "Sealed Box 4472",
+    "caseId": "005",
+    "type": "object",
+    "description": "Unlisted storage box containing seven folders of correspondence and maps.",
+    "analysis": "Contents describe a research annex that never appears in official histories.",
+    "image": null,
+    "xp": 20
+  },
+  {
+    "id": "ev-015",
+    "name": "Annex Photograph",
+    "caseId": "005",
+    "type": "image",
+    "description": "Single photograph of a temporary structure not present on any current map.",
+    "analysis": "Visual proof of the annex that was later erased from records.",
+    "image": null,
+    "xp": 15
+  }
+]

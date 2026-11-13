@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0d12">
+  <title>Case Archive — THE UNKNOWN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/investigation.css">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark">U<span>.</span></span><span class="brand-name">THE <b>UNKNOWN</b><small>INVESTIGATION ARCHIVE</small></span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <a href="cases.html">THE ARCHIVE</a>
+      <a href="dashboard.html">DASHBOARD</a>
+      <a href="evidence.html">EVIDENCE</a>
+      <a href="challenges.html">CHALLENGES</a>
+      <a href="map.html">MAP</a>
+      <a href="about.html">ABOUT</a>
+      <a class="nav-cta" href="dashboard.html">DASHBOARD <span>↗</span></a>
+    </nav>
+  </header>
+
+  <main class="page-main">
+    <div class="page-header">
+      <p class="eyebrow"><span class="live-dot"></span> 01 / CASE ARCHIVE</p>
+      <h1>Investigation <em>Files</em></h1>
+      <p>Select a case to open its file. Progress is tracked automatically. Locked cases unlock as you complete earlier investigations.</p>
+    </div>
+
+    <div class="filter-bar" id="filterBar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="open">Open</button>
+      <button class="filter-btn" data-filter="in_progress">In Progress</button>
+      <button class="filter-btn" data-filter="completed">Completed</button>
+      <button class="filter-btn" data-filter="locked">Locked</button>
+    </div>
+
+    <div class="case-list" id="caseList"></div>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand" href="index.html"><span class="brand-mark">U<span>.</span></span><span class="brand-name">THE <b>UNKNOWN</b></span></a>
+    <span>© 2026 THE UNKNOWN ARCHIVE</span>
+    <a href="dashboard.html">DASHBOARD</a>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="js/storage.js"></script>
+  <script src="js/progression.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/cases.js"></script>
+</body>
+</html>

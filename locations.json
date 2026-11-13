@@ -1,0 +1,68 @@
+[
+  {
+    "id": "loc-central",
+    "name": "The Central Archive",
+    "shortName": "Central Archive",
+    "description": "The main repository of THE UNKNOWN. Rows of climate-controlled shelves, reading rooms, and the Chronology Wing where the first anomalies were recorded.",
+    "status": "unlocked",
+    "unlockRequirement": null,
+    "associatedCases": ["001", "003"],
+    "collectibles": ["col-001", "col-002"],
+    "visual": "central"
+  },
+  {
+    "id": "loc-library",
+    "name": "The Forgotten Library",
+    "shortName": "Forgotten Library",
+    "description": "A wing that appears on older floor plans but is rarely mentioned in current guides. The Restricted Correspondence Room is located here.",
+    "status": "locked",
+    "unlockRequirement": { "type": "case", "id": "001", "minProgress": 50 },
+    "associatedCases": ["002"],
+    "collectibles": ["col-003"],
+    "visual": "library"
+  },
+  {
+    "id": "loc-observatory",
+    "name": "The Silent Observatory",
+    "shortName": "Silent Observatory",
+    "description": "An abandoned observation post on the edge of the archive grounds. Equipment was powered down decades ago, yet some instruments still register faint readings.",
+    "status": "locked",
+    "unlockRequirement": { "type": "case", "id": "002", "minProgress": 100 },
+    "associatedCases": ["004"],
+    "collectibles": ["col-004"],
+    "visual": "observatory"
+  },
+  {
+    "id": "loc-research",
+    "name": "The Old Research Station",
+    "shortName": "Research Station",
+    "description": "A concrete annex once used for material analysis. Most laboratories were stripped; a few sealed cabinets remain.",
+    "status": "locked",
+    "unlockRequirement": { "type": "casesCompleted", "count": 2 },
+    "associatedCases": [],
+    "collectibles": ["col-005"],
+    "visual": "research"
+  },
+  {
+    "id": "loc-lab",
+    "name": "The Hidden Laboratory",
+    "shortName": "Hidden Lab",
+    "description": "Accessible only after specific evidence combinations are recognized. Contains instruments and notes related to the more advanced anomalies.",
+    "status": "locked",
+    "unlockRequirement": { "type": "evidence", "count": 8 },
+    "associatedCases": [],
+    "collectibles": ["col-006"],
+    "visual": "lab"
+  },
+  {
+    "id": "loc-underground",
+    "name": "The Underground Records",
+    "shortName": "Underground Records",
+    "description": "Sub-level storage not shown on public maps. Temperature and humidity controlled. Home of the sealed catalogue gaps.",
+    "status": "locked",
+    "unlockRequirement": { "type": "case", "id": "003", "minProgress": 100 },
+    "associatedCases": ["005"],
+    "collectibles": ["col-007"],
+    "visual": "underground"
+  }
+]

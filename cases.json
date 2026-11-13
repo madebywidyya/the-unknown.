@@ -1,0 +1,187 @@
+[
+  {
+    "id": "001",
+    "title": "The Vanishing Hour",
+    "category": "MISSING OBJECT / LOGIC",
+    "difficulty": 1,
+    "difficultyLabel": "LEVEL 01 · BEGINNER",
+    "clues": 3,
+    "status": "open",
+    "description": "A clock inside an old archive repeatedly displays a different time. Historical records suggest that the clock has not been functioning correctly for decades. Three witnesses remember the same evening differently.",
+    "synopsis": "In the Central Archive's Chronology Wing, a brass mantel clock has been observed stopping at 11:47 — yet the date on the calendar beside it keeps changing. Staff logs conflict. Your task is to determine which detail does not belong and what the clock is actually marking.",
+    "objectives": [
+      { "id": "obj-001-1", "text": "Examine the clock face and note the stopped time", "xp": 10 },
+      { "id": "obj-001-2", "text": "Compare the three witness statements for inconsistencies", "xp": 20 },
+      { "id": "obj-001-3", "text": "Identify the anomalous detail that does not belong", "xp": 25 },
+      { "id": "obj-001-4", "text": "Submit final theory on what the clock is recording", "xp": 50 }
+    ],
+    "chapters": [
+      {
+        "id": "ch-001-1",
+        "title": "The Stopped Clock",
+        "content": "The brass clock sits on a dusty shelf in the Chronology Wing. Its hands are locked at 11:47. The glass is slightly fogged from the inside. A small engraving on the back reads 'Archive Property — Do Not Reset'. Nearby, a yellowed maintenance log claims the mechanism was last serviced in 1987 and declared permanently stopped."
+      },
+      {
+        "id": "ch-001-2",
+        "title": "Witness Accounts",
+        "content": "Three staff members were present on the evening the anomaly was first noted.\n\nWitness A (Archivist): 'I heard the chime exactly at 11:47. Then silence. The lights flickered once.'\n\nWitness B (Security): 'The clock was already stopped when I did my rounds. No chime. The hallway smelled of old paper and something metallic.'\n\nWitness C (Junior Researcher): 'I was looking at the calendar. The date had changed overnight, but the clock face never moved. I thought someone was playing a joke.'"
+      },
+      {
+        "id": "ch-001-3",
+        "title": "The Anomaly",
+        "content": "Closer inspection reveals a faint scratch on the glass that forms the number 47. The maintenance log has a page missing. The calendar beside the clock shows a date that does not match any official archive record for that year. One of the witness statements contains a detail that physically cannot be true given the location of the Chronology Wing."
+      }
+    ],
+    "evidenceIds": ["ev-001", "ev-002", "ev-003"],
+    "challengeIds": ["chl-001"],
+    "locationId": "loc-central",
+    "cover": "assets/images/case-clock.jpg",
+    "finalExplanation": "The clock was never broken. It was modified to mark the exact moment a restricted document was removed from the Chronology Wing. The 'stopped' time is a silent alarm. The inconsistent witness is the one who claimed to hear a chime — the mechanism had been silenced years earlier. The missing log page recorded the last authorized access."
+  },
+  {
+    "id": "002",
+    "title": "Letters from Nowhere",
+    "category": "ANONYMOUS MESSAGE / PATTERN",
+    "difficulty": 2,
+    "difficultyLabel": "LEVEL 02 · INTERMEDIATE",
+    "clues": 4,
+    "status": "open",
+    "description": "Anonymous letters appear inside a locked archive room. Their dates and references do not match the official archive records. The message is hiding in plain sight.",
+    "synopsis": "Every few nights a new letter materializes on the reading desk of the Restricted Correspondence Room. The envelopes bear no postage. The paper matches stock discontinued in 1962. The handwriting is consistent across all letters, yet no staff member matches the style.",
+    "objectives": [
+      { "id": "obj-002-1", "text": "Collect and catalog the first three letters", "xp": 15 },
+      { "id": "obj-002-2", "text": "Identify the repeating pattern in the letter contents", "xp": 20 },
+      { "id": "obj-002-3", "text": "Decode the hidden message using the provided cipher key", "xp": 30 },
+      { "id": "obj-002-4", "text": "Determine the intended recipient and purpose", "xp": 40 }
+    ],
+    "chapters": [
+      {
+        "id": "ch-002-1",
+        "title": "The First Letter",
+        "content": "Found on the desk at 03:14 according to the night log. Cream paper, black ink. The text appears to be a routine inquiry about a missing catalogue volume. The date at the top is three years in the future. A single word is underlined twice: 'OBSERVE'."
+      },
+      {
+        "id": "ch-002-2",
+        "title": "Pattern Emerges",
+        "content": "Subsequent letters arrive at irregular intervals. Each contains a different mundane request, but the underlined words, when read in order of discovery, form a coherent sentence. The postmarks (though the letters have none) are referenced in the text as if they exist."
+      },
+      {
+        "id": "ch-002-3",
+        "title": "The Cipher",
+        "content": "A faded card found tucked behind a shelf in the same room contains a simple substitution grid. Applying it to the underlined sequence reveals coordinates and a date that matches an unlogged entry in the Central Archive's visitor book."
+      }
+    ],
+    "evidenceIds": ["ev-004", "ev-005", "ev-006", "ev-007"],
+    "challengeIds": ["chl-002"],
+    "locationId": "loc-library",
+    "cover": "assets/images/case-letter.jpg",
+    "finalExplanation": "The letters were written by a former archivist who discovered a deliberate gap in the official records. Unable to report openly, they used the discontinued paper stock and a personal cipher to leave a trail for any future investigator who noticed the anomalies. The 'future' dates were offsets based on the discovery year of the first letter."
+  },
+  {
+    "id": "003",
+    "title": "The Empty Photograph",
+    "category": "LOST RECORD / OBSERVATION",
+    "difficulty": 2,
+    "difficultyLabel": "LEVEL 02 · INTERMEDIATE",
+    "clues": 5,
+    "status": "open",
+    "description": "A photograph appears ordinary at first glance. Look again: one small detail changes the entire story. The image contradicts the original written documentation.",
+    "synopsis": "An official photograph of the 1974 Archive Expansion Committee hangs in the lobby. The accompanying plaque lists seven names. Careful comparison with the original negative and the typed minutes reveals a discrepancy that cannot be explained by simple error.",
+    "objectives": [
+      { "id": "obj-003-1", "text": "Compare the displayed photograph with the archived negative", "xp": 15 },
+      { "id": "obj-003-2", "text": "Cross-reference names on the plaque with the meeting minutes", "xp": 20 },
+      { "id": "obj-003-3", "text": "Locate the missing visual detail that alters the interpretation", "xp": 25 },
+      { "id": "obj-003-4", "text": "Formulate a theory consistent with all physical evidence", "xp": 45 }
+    ],
+    "chapters": [
+      {
+        "id": "ch-003-1",
+        "title": "The Official Image",
+        "content": "Seven figures stand in front of the newly completed east wing. The lighting is even. Faces are clear. The plaque beneath lists: Director Hale, Archivist Voss, Engineer Kim, Curator Lang, Secretary Pell, Surveyor Reed, and Guest Consultant 'M.R.'."
+      },
+      {
+        "id": "ch-003-2",
+        "title": "The Negative",
+        "content": "The original glass-plate negative stored in the cold vault shows only six figures. The space where the seventh person stands is empty in the negative. No chemical or physical damage accounts for the difference. The negative's emulsion date matches the claimed photograph date."
+      },
+      {
+        "id": "ch-003-3",
+        "title": "The Minutes",
+        "content": "The typed minutes of the expansion committee meeting list six attendees. 'M.R.' does not appear. A handwritten margin note in faded blue ink reads: 'Photograph adjusted — see internal memo 74-11-B'. That memo is missing from the file."
+      }
+    ],
+    "evidenceIds": ["ev-008", "ev-009", "ev-010"],
+    "challengeIds": ["chl-003"],
+    "locationId": "loc-central",
+    "cover": "assets/images/case-camera.jpg",
+    "finalExplanation": "The seventh figure was added in a later print for public relations purposes. The real reason for the empty space in the negative is that one committee member refused to be photographed with the group after discovering an irregularity in the expansion funding. The missing memo documented the refusal and the subsequent decision to composite the image."
+  },
+  {
+    "id": "004",
+    "title": "The Silent Frequency",
+    "category": "AUDIO ANOMALY / PATTERN",
+    "difficulty": 3,
+    "difficultyLabel": "LEVEL 03 · ADVANCED",
+    "clues": 4,
+    "status": "locked",
+    "description": "An unusual audio recording appears in an abandoned research archive. Its pattern seems to contain a hidden message that only becomes clear when analyzed against environmental data.",
+    "synopsis": "A reel-to-reel tape labeled 'Test Tone — Do Not Play' was recovered from the Silent Observatory. When digitized, the recording contains long stretches of silence interrupted by brief bursts of static that form a repeating sequence.",
+    "objectives": [
+      { "id": "obj-004-1", "text": "Digitize and visualize the audio waveform", "xp": 15 },
+      { "id": "obj-004-2", "text": "Map the static bursts to a known encoding system", "xp": 25 },
+      { "id": "obj-004-3", "text": "Cross-reference the decoded message with observatory logs", "xp": 30 },
+      { "id": "obj-004-4", "text": "Identify the source and purpose of the transmission", "xp": 50 }
+    ],
+    "chapters": [
+      {
+        "id": "ch-004-1",
+        "title": "The Tape",
+        "content": "The reel is stored in a metal canister marked with the observatory's old inventory code. The tape itself is in good condition. Playing it produces mostly silence punctuated by sharp clicks and brief noise. A handwritten note inside the canister reads: 'Not interference. Pattern confirmed 03/12.'"
+      },
+      {
+        "id": "ch-004-2",
+        "title": "The Pattern",
+        "content": "When the waveform is plotted, the bursts form groups of short and long signals. The groups match a simple binary or Morse-like structure. Applying a standard time-unit conversion yields a short sequence of letters and numbers."
+      }
+    ],
+    "evidenceIds": ["ev-011", "ev-012"],
+    "challengeIds": ["chl-004"],
+    "locationId": "loc-observatory",
+    "cover": "assets/images/case-audio.jpg",
+    "finalExplanation": "The 'test tone' was a covert method used by observatory staff to log the exact times of unexplained signal events without creating an official record that could be reviewed by outside authorities. The pattern encodes coordinates and timestamps of three anomalous readings that were later removed from the public dataset."
+  },
+  {
+    "id": "005",
+    "title": "The Last Catalogue",
+    "category": "MISSING RECORD / LOGIC",
+    "difficulty": 3,
+    "difficultyLabel": "LEVEL 03 · ADVANCED",
+    "clues": 5,
+    "status": "locked",
+    "description": "A missing catalogue entry leads to a collection of documents that should not exist in the archive. The gap in the numbering system is deliberate.",
+    "synopsis": "The master catalogue of the Underground Records skips from entry 4471 to 4473. Entry 4472 is simply absent. No destruction order exists. Searching the physical shelves reveals a sealed box whose inventory number matches the missing entry.",
+    "objectives": [
+      { "id": "obj-005-1", "text": "Locate the physical gap in the catalogue shelves", "xp": 10 },
+      { "id": "obj-005-2", "text": "Open and inventory the sealed box matching 4472", "xp": 20 },
+      { "id": "obj-005-3", "text": "Determine why the documents were removed from official records", "xp": 30 },
+      { "id": "obj-005-4", "text": "Decide whether the contents should remain classified", "xp": 40 }
+    ],
+    "chapters": [
+      {
+        "id": "ch-005-1",
+        "title": "The Gap",
+        "content": "The bound catalogue volumes are complete except for the single missing number. The paper quality and binding of surrounding entries are consistent. The gap has existed since at least the 1991 audit, when it was noted as 'possible clerical error — no further action'."
+      },
+      {
+        "id": "ch-005-2",
+        "title": "The Box",
+        "content": "The sealed box is found in a lower storage level not listed on any public floor plan. Inside are seven folders containing correspondence, maps, and a single photograph. The correspondence discusses the planned closure of a research wing that never appears in any official history of the archive."
+      }
+    ],
+    "evidenceIds": ["ev-013", "ev-014", "ev-015"],
+    "challengeIds": ["chl-005"],
+    "locationId": "loc-underground",
+    "cover": "assets/images/case-catalogue.jpg",
+    "finalExplanation": "Entry 4472 documented the existence of a temporary research annex used for sensitive environmental testing. When the annex was quietly dismantled, the decision was made to remove all references rather than create a paper trail of the work performed there. The sealed box was left as an intentional failsafe by one of the original researchers."
+  }
+]

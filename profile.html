@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explorer Profile — THE UNKNOWN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark">U<span>.</span></span><span class="brand-name">THE <b>UNKNOWN</b><small>INVESTIGATION ARCHIVE</small></span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <a href="cases.html">THE ARCHIVE</a>
+      <a href="dashboard.html">DASHBOARD</a>
+      <a href="evidence.html">EVIDENCE</a>
+      <a href="challenges.html">CHALLENGES</a>
+      <a href="map.html">MAP</a>
+      <a href="about.html">ABOUT</a>
+      <a class="nav-cta" href="dashboard.html">DASHBOARD <span>↗</span></a>
+    </nav>
+  </header>
+  <main class="page-main">
+    <div class="page-header">
+      <p class="eyebrow"><span class="live-dot"></span> EXPLORER PROFILE</p>
+      <h1 id="profileName">Investigator</h1>
+      <p>All progress is stored in this browser via LocalStorage.</p>
+    </div>
+    <div class="dash-grid">
+      <section class="dash-card">
+        <h2 class="dash-title">Statistics</h2>
+        <div class="stat-row" id="profileStats"></div>
+        <div class="level-bar-wrap">
+          <div class="level-bar-label"><span>Level progress</span><span id="pLevelPct">0%</span></div>
+          <div class="progress-bar"><span id="pLevelBar" style="width:0%"></span></div>
+        </div>
+      </section>
+      <section class="dash-card">
+        <h2 class="dash-title">Achievements</h2>
+        <div class="achieve-grid" id="pAchieve"></div>
+      </section>
+    </div>
+    <div style="margin-top:24px">
+      <button class="button button-ghost" id="resetBtn">RESET ALL PROGRESS</button>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <a class="brand" href="index.html"><span class="brand-mark">U<span>.</span></span><span class="brand-name">THE <b>UNKNOWN</b></span></a>
+    <span>© 2026 THE UNKNOWN ARCHIVE</span>
+    <a href="dashboard.html">DASHBOARD</a>
+  </footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="js/storage.js"></script>
+  <script src="js/progression.js"></script>
+  <script src="js/navigation.js"></script>
+  <script>
+    Progression.checkAchievements();
+    const s = Storage.get();
+    const st = Progression.stats();
+    document.getElementById('profileName').textContent = s.profile.name || 'Investigator';
+    document.getElementById('profileStats').innerHTML = `
+      <div class="stat"><span class="stat-value">${st.level}</span><span class="stat-label">LEVEL</span></div>
+      <div class="stat"><span class="stat-value">${st.xp}</span><span class="stat-label">XP</span></div>
+      <div class="stat"><span class="stat-value">${st.evidence}</span><span class="stat-label">EVIDENCE</span></div>
+      <div class="stat"><span class="stat-value">${st.casesCompleted}</span><span class="stat-label">CASES</span></div>
+    `;
+    document.getElementById('pLevelPct').textContent = st.levelProgress.percent + '%';
+    document.getElementById('pLevelBar').style.width = st.levelProgress.percent + '%';
+    const defs = Progression.ACHIEVEMENTS;
+    document.getElementById('pAchieve').innerHTML = Object.entries(defs).map(([id, def]) => `
+      <div class="achieve-item ${s.achievements[id] ? 'unlocked' : ''}">
+        <div class="icon">${def.icon}</div>
+        <div class="name">${def.name}</div>
+        <div class="desc">${def.desc}</div>
+      </div>
+    `).join('');
+    document.getElementById('resetBtn').addEventListener('click', () => {
+      if (confirm('Reset all progress? This cannot be undone.')) {
+        Storage.reset();
+        showToast('Progress reset.');
+        location.reload();
+      }
+    });
+  </script>
+</body>
+</html>

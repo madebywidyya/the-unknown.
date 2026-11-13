@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secret Terminal — THE UNKNOWN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <style>
+    .terminal {
+      background: #0a0c10;
+      border: 1px solid var(--line);
+      font-family: "Space Grotesk", ui-monospace, monospace;
+      font-size: 13px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .terminal-header {
+      background: var(--panel);
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--line);
+      font: 600 10px var(--display);
+      letter-spacing: 1.5px;
+      color: var(--gold);
+    }
+    .terminal-body {
+      padding: 18px;
+      min-height: 360px;
+      max-height: 480px;
+      overflow-y: auto;
+      color: #b8c0a8;
+      line-height: 1.6;
+    }
+    .terminal-body .cmd { color: var(--gold); }
+    .terminal-body .err { color: var(--red); }
+    .terminal-input-row {
+      display: flex;
+      border-top: 1px solid var(--line);
+      padding: 12px 16px;
+      gap: 8px;
+      align-items: center;
+    }
+    .terminal-input-row span { color: var(--gold); }
+    .terminal-input-row input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      color: var(--text);
+      font: 400 13px "Space Grotesk", monospace;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark">U<span>.</span></span><span class="brand-name">THE <b>UNKNOWN</b><small>INVESTIGATION ARCHIVE</small></span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <a href="cases.html">THE ARCHIVE</a>
+      <a href="dashboard.html">DASHBOARD</a>
+      <a href="evidence.html">EVIDENCE</a>
+      <a href="challenges.html">CHALLENGES</a>
+      <a href="map.html">MAP</a>
+      <a href="about.html">ABOUT</a>
+      <a class="nav-cta" href="dashboard.html">DASHBOARD <span>↗</span></a>
+    </nav>
+  </header>
+  <main class="page-main">
+    <div class="page-header" style="text-align:center">
+      <p class="eyebrow" style="justify-content:center"><span class="live-dot"></span> SECRET TERMINAL</p>
+      <h1>Archive <em>Access</em></h1>
+      <p>Type commands to query the system. Try HELP to begin.</p>
+    </div>
+    <div class="terminal">
+      <div class="terminal-header">UNKNOWN://TERMINAL — SECURE SESSION</div>
+      <div class="terminal-body" id="termOut">
+        <div>THE UNKNOWN ARCHIVE TERMINAL v0.9</div>
+        <div>Type HELP for available commands.</div>
+        <div style="margin-top:8px;color:var(--muted-2)">Session started.</div>
+      </div>
+      <div class="terminal-input-row">
+        <span>›</span>
+        <input type="text" id="termIn" autocomplete="off" spellcheck="false" aria-label="Terminal input">
+      </div>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <a class="brand" href="index.html"><span class="brand-mark">U<span>.</span></span><span class="brand-name">THE <b>UNKNOWN</b></span></a>
+    <span>© 2026 THE UNKNOWN ARCHIVE</span>
+    <a href="dashboard.html">DASHBOARD</a>
+  </footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="js/storage.js"></script>
+  <script src="js/progression.js"></script>
+  <script src="js/navigation.js"></script>
+  <script>
+    const out = document.getElementById('termOut');
+    const input = document.getElementById('termIn');
+    const history = [];
+    let histIdx = -1;
+
+    function print(html, cls = '') {
+      const div = document.createElement('div');
+      if (cls) div.className = cls;
+      div.innerHTML = html;
+      out.appendChild(div);
+      out.scrollTop = out.scrollHeight;
+    }
+
+    const commands = {
+      HELP: () => {
+        print('Available commands:');
+        print('  HELP      — list commands');
+        print('  STATUS    — show investigator progress');
+        print('  ARCHIVE   — list open case IDs');
+        print('  ACCESS    — request deeper access (requires password)');
+        print('  UNKNOWN   — classified response');
+        print('  CLEAR     — clear screen');
+        print('  XP        — show current XP and level');
+      },
+      STATUS: () => {
+        const st = Progression.stats();
+        print(`Level ${st.level} · ${st.xp} XP`);
+        print(`Evidence: ${st.evidence} · Cases completed: ${st.casesCompleted}`);
+        print(`Challenges solved: ${st.challenges} · Locations: ${st.locations}`);
+      },
+      ARCHIVE: () => {
+        print('Open case files: 001, 002, 003');
+        print('Restricted: 004, 005 (progress required)');
+      },
+      ACCESS: (args) => {
+        if ((args[0] || '').toUpperCase() === 'TRACE') {
+          print('Access granted. Classified note unlocked.');
+          print('> The clock was never broken. Look for the missing log page.', 'cmd');
+          Storage.unlockAchievement('terminal_initiate');
+          Storage.addXP(15, 'Terminal access');
+          Progression.checkAchievements();
+          showToast('+15 XP — Terminal access');
+        } else {
+          print('Usage: ACCESS <password>', 'err');
+          print('Hint: what every secret leaves.');
+        }
+      },
+      UNKNOWN: () => {
+        print('The archive does not answer every question.');
+        print('Some files remain sealed for a reason.');
+      },
+      CLEAR: () => { out.innerHTML = ''; },
+      XP: () => {
+        const st = Progression.stats();
+        print(`XP ${st.xp} · Level ${st.level} · Next level at ${Progression.xpForLevel(st.level + 1)} XP`);
+      }
+    };
+
+    input.addEventListener('keydown', e => {
+      if (e.key === 'Enter') {
+        const raw = input.value.trim();
+        if (!raw) return;
+        history.unshift(raw);
+        histIdx = -1;
+        print(`› ${raw}`, 'cmd');
+        const parts = raw.split(/\s+/);
+        const cmd = parts[0].toUpperCase();
+        const args = parts.slice(1);
+        if (commands[cmd]) commands[cmd](args);
+        else print(`Unknown command: ${cmd}. Type HELP.`, 'err');
+        input.value = '';
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        if (histIdx < history.length - 1) {
+          histIdx++;
+          input.value = history[histIdx] || '';
+        }
+      } else if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        if (histIdx > 0) {
+          histIdx--;
+          input.value = history[histIdx] || '';
+        } else {
+          histIdx = -1;
+          input.value = '';
+        }
+      }
+    });
+    input.focus();
+  </script>
+</body>
+</html>

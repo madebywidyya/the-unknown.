@@ -1,0 +1,105 @@
+[
+  {
+    "id": "chl-001",
+    "caseId": "001",
+    "title": "The Inconsistent Witness",
+    "type": "logic",
+    "difficulty": 1,
+    "description": "Three statements were given about the evening the clock stopped. Only one statement contains a detail that is physically impossible given the known layout of the Chronology Wing.",
+    "question": "Which witness made a claim that cannot be true?",
+    "options": [
+      { "id": "a", "text": "Witness A — claimed to hear a chime" },
+      { "id": "b", "text": "Witness B — claimed the clock was already stopped and noted a metallic smell" },
+      { "id": "c", "text": "Witness C — claimed the calendar date had changed" }
+    ],
+    "correct": "a",
+    "hint": "The maintenance log states the chime mechanism was permanently disabled in 1987.",
+    "explanation": "Witness A is the inconsistent one. The clock had no functioning chime, so no one could have heard it. The other details are possible.",
+    "xp": 25
+  },
+  {
+    "id": "chl-002",
+    "caseId": "002",
+    "title": "Decode the Sequence",
+    "type": "cipher",
+    "difficulty": 2,
+    "description": "The underlined words from the first three letters, when read in order, form a short phrase. Using the simple substitution key found on the cipher card (A=N, B=O, C=P ... classic ROT13), decode the final coordinate string.",
+    "question": "What is the decoded coordinate string? (Enter the letters only, no spaces)",
+    "answerType": "text",
+    "correct": "N47E12",
+    "hint": "Apply ROT13 to the underlined sequence: 'A 47 R 12' becomes something useful for a map.",
+    "explanation": "ROT13 of the key sequence yields N47E12 — a grid reference that matches an unlogged visitor entry.",
+    "xp": 30
+  },
+  {
+    "id": "chl-003",
+    "caseId": "003",
+    "title": "Count the Figures",
+    "type": "observation",
+    "difficulty": 2,
+    "description": "Compare the public photograph description with the negative description and the minutes.",
+    "question": "How many people appear in the original glass-plate negative?",
+    "options": [
+      { "id": "a", "text": "Five" },
+      { "id": "b", "text": "Six" },
+      { "id": "c", "text": "Seven" },
+      { "id": "d", "text": "Eight" }
+    ],
+    "correct": "b",
+    "hint": "The negative is the original exposure. The public print was later altered.",
+    "explanation": "The original negative shows six figures. The seventh was added to the public photograph.",
+    "xp": 20
+  },
+  {
+    "id": "chl-004",
+    "caseId": "004",
+    "title": "Pattern Recognition",
+    "type": "pattern",
+    "difficulty": 3,
+    "description": "The static bursts on the tape form groups that can be read as Morse code. A short segment translates to a three-letter code used by the observatory.",
+    "question": "What three-letter code is encoded in the first complete group of bursts? (Uppercase)",
+    "answerType": "text",
+    "correct": "SIG",
+    "hint": "Short-long-short patterns often map to common observatory abbreviations for 'signal'.",
+    "explanation": "The pattern decodes to SIG — the internal code used to mark anomalous signal events without formal logging.",
+    "xp": 35
+  },
+  {
+    "id": "chl-005",
+    "caseId": "005",
+    "title": "The Missing Number",
+    "type": "logic",
+    "difficulty": 3,
+    "description": "The catalogue jumps from 4471 to 4473. A sealed box exists with the inventory mark 4472. The 1991 audit called it a clerical error.",
+    "question": "What is the most reasonable conclusion about entry 4472?",
+    "options": [
+      { "id": "a", "text": "It was never assigned and the box is a later forgery" },
+      { "id": "b", "text": "It was deliberately removed from official records while the physical material was preserved" },
+      { "id": "c", "text": "The audit correctly identified a simple numbering mistake" },
+      { "id": "d", "text": "The box belongs to a different institution and was misfiled" }
+    ],
+    "correct": "b",
+    "hint": "The physical existence of the box and the contents describing an unlisted annex strongly suggest intentional omission rather than error.",
+    "explanation": "The gap was deliberate. The documents were removed from the official catalogue but preserved in a sealed, unlisted location as a quiet failsafe.",
+    "xp": 40
+  },
+  {
+    "id": "chl-006",
+    "caseId": null,
+    "title": "Archive Orientation Quiz",
+    "type": "quiz",
+    "difficulty": 1,
+    "description": "A short orientation challenge for new investigators.",
+    "question": "What is the primary purpose of THE UNKNOWN archive experience?",
+    "options": [
+      { "id": "a", "text": "To sell classified documents" },
+      { "id": "b", "text": "To practice observation, logic, and careful questioning through fictional cases" },
+      { "id": "c", "text": "To provide real historical investigations" },
+      { "id": "d", "text": "To test computer security" }
+    ],
+    "correct": "b",
+    "hint": "Read the archive note on the landing page.",
+    "explanation": "All cases are fictional and designed for entertainment and critical-thinking practice.",
+    "xp": 15
+  }
+]

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Investigation Board — THE UNKNOWN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <style>
+    .board {
+      background: #1a1714;
+      border: 1px solid var(--line);
+      min-height: 420px;
+      padding: 24px;
+      position: relative;
+      background-image: radial-gradient(circle at 20% 30%, rgba(165,45,54,0.08), transparent 40%),
+                        radial-gradient(circle at 80% 70%, rgba(212,183,124,0.06), transparent 35%);
+    }
+    .board-note {
+      background: #e8e0d0;
+      color: #2a2620;
+      padding: 14px 16px;
+      max-width: 220px;
+      font-size: 12px;
+      line-height: 1.5;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+      margin: 10px;
+      display: inline-block;
+      vertical-align: top;
+    }
+    .board-note h4 { margin: 0 0 6px; font: 700 11px var(--display); letter-spacing: 0.5px; }
+    .board-note.gold { background: #d4b77c; }
+    .string-line {
+      position: absolute;
+      height: 1px;
+      background: #a52d36;
+      transform-origin: left center;
+      pointer-events: none;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark">U<span>.</span></span><span class="brand-name">THE <b>UNKNOWN</b><small>INVESTIGATION ARCHIVE</small></span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <a href="cases.html">THE ARCHIVE</a>
+      <a href="dashboard.html">DASHBOARD</a>
+      <a href="evidence.html">EVIDENCE</a>
+      <a href="challenges.html">CHALLENGES</a>
+      <a href="map.html">MAP</a>
+      <a href="about.html">ABOUT</a>
+      <a class="nav-cta" href="evidence.html">EVIDENCE <span>↗</span></a>
+    </nav>
+  </header>
+  <main class="page-main">
+    <div class="page-header">
+      <p class="eyebrow"><span class="live-dot"></span> INVESTIGATION BOARD</p>
+      <h1>Connect the <em>clues.</em></h1>
+      <p>Discovered evidence appears as notes. Add your own theories. This is a conceptual board for organizing your thinking.</p>
+    </div>
+    <div class="board" id="board">
+      <p style="color:#8a8478;font-size:13px" id="boardEmpty">No evidence on the board yet. Discover items in a case file first.</p>
+    </div>
+    <div style="margin-top:20px;max-width:480px">
+      <label style="font:600 10px var(--display);letter-spacing:1.2px;color:var(--gold)">ADD A NOTE</label>
+      <textarea id="boardNote" placeholder="Your connection or theory…" style="width:100%;min-height:80px;margin-top:8px;background:var(--panel);border:1px solid var(--line);color:var(--text);padding:12px;font:400 13px var(--sans)"></textarea>
+      <button class="button button-primary" id="addNoteBtn" style="margin-top:10px">PIN TO BOARD</button>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <a class="brand" href="index.html"><span class="brand-mark">U<span>.</span></span><span class="brand-name">THE <b>UNKNOWN</b></span></a>
+    <span>© 2026 THE UNKNOWN ARCHIVE</span>
+    <a href="dashboard.html">DASHBOARD</a>
+  </footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="js/storage.js"></script>
+  <script src="js/progression.js"></script>
+  <script src="js/navigation.js"></script>
+  <script>
+    (async () => {
+      let evidence = [];
+      try {
+        const res = await fetch('data/evidence.json');
+        evidence = await res.json();
+      } catch (e) {}
+      const board = document.getElementById('board');
+      const discovered = evidence.filter(e => Storage.hasEvidence(e.id));
+      if (discovered.length) {
+        document.getElementById('boardEmpty')?.remove();
+        discovered.forEach((e, i) => {
+          const note = document.createElement('div');
+          note.className = 'board-note' + (i % 3 === 0 ? ' gold' : '');
+          note.innerHTML = `<h4>${e.name}</h4>${e.description.slice(0, 100)}…`;
+          note.style.transform = `rotate(${(i % 5) - 2}deg)`;
+          board.appendChild(note);
+        });
+      }
+      // User notes from storage
+      const userNotes = Storage.get().theories['_board'] || [];
+      userNotes.forEach(t => {
+        const note = document.createElement('div');
+        note.className = 'board-note';
+        note.innerHTML = `<h4>THEORY</h4>${t.text}`;
+        board.appendChild(note);
+        document.getElementById('boardEmpty')?.remove();
+      });
+
+      document.getElementById('addNoteBtn').addEventListener('click', () => {
+        const text = document.getElementById('boardNote').value.trim();
+        if (!text) return;
+        Storage.saveTheory('_board', { text });
+        const note = document.createElement('div');
+        note.className = 'board-note';
+        note.innerHTML = `<h4>THEORY</h4>${text}`;
+        board.appendChild(note);
+        document.getElementById('boardEmpty')?.remove();
+        document.getElementById('boardNote').value = '';
+        showToast('Note pinned to board.');
+      });
+    })();
+  </script>
+</body>
+</html>
