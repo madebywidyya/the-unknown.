@@ -1,0 +1,32 @@
+[
+  {
+    "id": "001",
+    "title": "The Vanishing Hour",
+    "category": "Missing Object / Logic",
+    "difficulty": "Beginner",
+    "status": "open",
+    "description": "A clock stopped at 11:47. Three witnesses remember the same evening differently.",
+    "image": "../assets/images/case-clock.jpg",
+    "clues": ["A clock with a stopped time", "Three conflicting witness statements", "A receipt with an unusual timestamp"]
+  },
+  {
+    "id": "002",
+    "title": "Letters from Nowhere",
+    "category": "Anonymous Message / Pattern",
+    "difficulty": "Intermediate",
+    "status": "open",
+    "description": "An unsigned letter arrives with a strange sequence of symbols.",
+    "image": "../assets/images/case-letter.jpg",
+    "clues": ["An unsigned letter", "A repeated symbol sequence", "A note written in the margin", "A pattern hidden in dates"]
+  },
+  {
+    "id": "003",
+    "title": "The Empty Photograph",
+    "category": "Lost Record / Observation",
+    "difficulty": "Intermediate",
+    "status": "open",
+    "description": "A photograph appears ordinary at first glance. One small detail changes the entire story.",
+    "image": "../assets/images/case-camera.jpg",
+    "clues": ["A printed photograph", "A handwritten caption", "A reflection in the background", "A missing frame", "A date stamp"]
+  }
+]

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0d12">
+  <meta name="description" content="THE UNKNOWN — Enter the unexplored. A fictional mystery investigation experience.">
+  <title>THE UNKNOWN — Enter the Unexplored</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="THE UNKNOWN home">
+      <span class="brand-mark">U<span>.</span></span>
+      <span class="brand-name">THE <b>UNKNOWN</b><small>INVESTIGATION ARCHIVE</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Buka menu" aria-expanded="false">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <a href="#archive">THE ARCHIVE</a>
+      <a href="#protocol">HOW IT WORKS</a>
+      <a href="#about">ABOUT</a>
+      <a class="nav-cta" href="#archive">ENTER ARCHIVE <span>↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-backdrop"></div>
+      <div class="hero-content">
+        <p class="eyebrow"><span class="live-dot"></span> INDEPENDENT MYSTERY ARCHIVE <span class="eyebrow-line"></span> EST. 2026</p>
+        <h1>EVERY SECRET<br>LEAVES A <em>TRACE.</em></h1>
+        <p class="hero-copy">Some stories are waiting to be uncovered. Step into the archive, examine the evidence, and decide what really happened.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#archive">EXPLORE THE ARCHIVE <span>↗</span></a>
+          <a class="text-link" href="#protocol">DISCOVER THE EXPERIENCE <span>↓</span></a>
+        </div>
+        <div class="hero-meta">
+          <div><span class="meta-number">03</span><span class="meta-label">OPEN CASE FILES</span></div>
+          <div><span class="meta-number">07</span><span class="meta-label">HIDDEN CLUES</span></div>
+          <div><span class="meta-number">∞</span><span class="meta-label">POSSIBLE QUESTIONS</span></div>
+        </div>
+      </div>
+      <div class="hero-stamp" aria-hidden="true"><span>CLASSIFIED</span><b>●</b><small>ARCHIVE DIVISION</small></div>
+      <div class="hero-index">FILE NO. 000 — THE BEGINNING</div>
+    </section>
+
+    <section class="ticker" aria-label="Archive notice">
+      <div class="ticker-track"><span>THE TRUTH IS IN THE DETAILS</span><i>✳</i><span>OBSERVE · CONNECT · DISCOVER</span><i>✳</i><span>THE TRUTH IS IN THE DETAILS</span><i>✳</i><span>OBSERVE · CONNECT · DISCOVER</span><i>✳</i></div>
+    </section>
+
+    <section class="section archive-section" id="archive">
+      <div class="section-heading">
+        <div><p class="eyebrow">01 / THE ARCHIVE</p><h2>Choose your <em>case.</em></h2></div>
+        <p class="section-intro">Every file contains a story. Every detail matters. Start with an open investigation.</p>
+      </div>
+      <div class="case-grid" id="caseGrid"></div>
+      <p class="archive-note"><span>!</span> All investigations are fictional experiences created for entertainment and critical-thinking practice.</p>
+    </section>
+
+    <section class="protocol-section" id="protocol">
+      <div class="protocol-image">
+        <div class="image-overlay"></div>
+        <div class="photo-caption">EVIDENCE ROOM / 01</div>
+        <div class="red-string string-one"></div><div class="red-string string-two"></div>
+        <div class="evidence-card card-a">FRAGMENT<br><b>NO. 014</b></div>
+        <div class="evidence-card card-b">UNKNOWN<br><b>SUBJECT</b></div>
+        <div class="evidence-pin">+</div>
+      </div>
+      <div class="protocol-copy">
+        <p class="eyebrow">02 / THE METHOD</p>
+        <h2>Look closer.<br><em>Think deeper.</em></h2>
+        <p class="section-intro">This is more than a collection of stories. It's an interactive space built around observation, logic, and the art of asking better questions.</p>
+        <div class="steps">
+          <div class="step"><span>01</span><div><b>OBSERVE</b><p>Read the file and examine every detail.</p></div></div>
+          <div class="step"><span>02</span><div><b>CONNECT</b><p>Compare clues and build your own theory.</p></div></div>
+          <div class="step"><span>03</span><div><b>UNLOCK</b><p>Solve the challenge to reveal what comes next.</p></div></div>
+        </div>
+        <a class="text-link" href="#archive">FIND YOUR FIRST CASE <span>↗</span></a>
+      </div>
+    </section>
+
+    <section class="quote-section" id="about">
+      <p class="eyebrow">03 / A NOTE FROM THE ARCHIVE</p>
+      <blockquote>“The obvious answer is not always the <em>whole story.</em>”</blockquote>
+      <p>WELCOME TO THE UNKNOWN — WHERE CURIOSITY IS YOUR MOST VALUABLE TOOL.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand" href="#home"><span class="brand-mark">U<span>.</span></span><span class="brand-name">THE <b>UNKNOWN</b><small>INVESTIGATION ARCHIVE</small></span></a>
+    <span>© 2026 THE UNKNOWN ARCHIVE</span>
+    <a href="#home">BACK TO TOP ↑</a>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
